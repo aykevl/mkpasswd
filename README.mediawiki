@@ -1,0 +1,14 @@
+=Generate a password / Genereer een wachtwoord =
+(This is a Dutch program, so I will continue in Dutch)
+
+Dit is een kleine web app (offline) voor het maken van een wachtwoord. Het maakt een hash van je gebruikersnaam, de service naam (bijvoorbeeld google, last.fm, etc.) en een master wachtwoord. Op die manier kun je een universele gebruikersnaam en wachtwoord gebruiken zonder dat al die websites toegang (kunnen) krijgen op de andere websites.
+
+Gebruik spreekt voor zich, lijkt mij.
+
+De website werkt ook op mobiele browsers met aangepaste stijl (alleen via css).
+
+Voor de hash gebruikt het de eerset 8 tekens van een base64-gecodeerde sha256 hash.
+
+Zie:
+* http://code.google.com/p/crypto-js/#SHA-256
+
