@@ -7,15 +7,16 @@ $dir = '.';
 $hashes = '';
 $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
 foreach($iterator as $file) {
-    if ($file->IsFile() &&
-        $file != './cache-manifest.php' &&
-        substr($file->getFilename(), 0, 1) != '.')
-    {
-        echo $file . "\n";
-        $hashes .= md5_file($file);
-    }
+    if (!$file->IsFile() ||
+        $file == './cache-manifest.php' ||
+        strpos($file, '/.') !== false)
+            continue;
+
+    echo $file . "\n";
+    $hashes .= md5_file($file);
 }
-echo '# Hash: '.md5($hashes) . "\n";
+// to reload the whole app when something has changed
+echo "\n# Hash: ".md5($hashes) . "\n";
 
 
 ?>
