@@ -1,0 +1,12 @@
+
+label {
+	display: inline-block;
+	min-width: 10em;
+	font-weight: bold;
+	margin-top: 0.5em;
+}
+
+ul.form {
+	list-style-type: none;
+	padding-left: 0;
+}

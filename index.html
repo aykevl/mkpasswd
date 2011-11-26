@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html manifest="cache-manifest.php">
+<head>
+
+<title>Genereer een wachtwoord</title>
+<meta name="viewport" content="width=device-width, user-scalable=yes"/>
+
+<script type="text/javascript" src="crypto-sha256.js"></script>
+<script type="text/javascript" src="code.js"></script>
+
+<link rel="stylesheet" href="stylesheet.css" />
+<link rel="stylesheet" href="stylesheet-mobile.css" media="mobile" />
+
+</head>
+<body>
+
+<h1>Genereer een wachtwoord</h1>
+
+<p>Genereert met dit algoritme: <code>base64(sha256( <em>servicenaam</em> + <em>gebruikersnaam</em> + <em>wachtwoord</em> ))</code>.</p>
+
+<form method="post" action="javascript:mkpasswd()">
+<ul class="form">
+	<li>
+		<label for="servicename">Servicenaam:</label>
+		<input type="text" id="servicename" autofocus="yes"/>
+	</li>
+
+	<li>
+		<label for="username">Gebruikersnaam:</label>
+		<input type="text" id="username"/>
+	</li>
+
+	<li>
+		<label for="password">Wachtwoord:</label>
+		<input type=password id=password />
+	</li>
+</ul>
+<input type="submit" value="Genereer" />
+
+</form>
+
+<p>
+	<label for="genpasswd">Gegenereerd wachtwoord:</label>
+	<input id=genpasswd name=genpasswd type=text placeholder="klik op 'Genereer'" />
+</p>
+
+<p>Credits:</p>
+<ul>
+	<li><a href="http://code.google.com/p/crypto-js/#SHA-256">crypto-js</a></li>
+</ul>
+
+
+</body>
+</html>
